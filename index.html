@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>$KEEPER</title>
+  <link rel="icon" href="th.jpg" type="image/jpeg">
+  <style>
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+      font-family: "Garamond", serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      background: #101010;
+    }
+
+
+    .vignette {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.6) 100%);
+      z-index: -1;
+    }
+
+
+    .quote {
+      font-size: 2rem;
+      text-align: center;
+      padding: 20px;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      max-width: 80%;
+      line-height: 1.5;
+      position: relative;
+      z-index: 10;
+      cursor: pointer; 
+      transition: background 0.3s, color 0.3s; 
+      color: white; 
+    }
+
+    .quote:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffcc00; 
+    }
+
+
+
+    @keyframes flyDragon {
+      0% {
+        transform: translateX(0) translateY(0);
+      }
+      50% {
+        transform: translateX(-50vw) translateY(-10vh);
+      }
+      100% {
+        transform: translateX(100vw) translateY(0);
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="fog"></div>
+  <div class="vignette"></div>
+  <div class="castle"></div>
+  <div class="dragon"></div>
+
+
+  <a href="https://pump.fun/profile/web3dv" id="quote" class="quote" target="_blank">
+    "The wisdom of the ages lies buried in the forgotten scrolls of time."
+  </a>
+
+  <script>
+
+    const medievalQuotes = [
+      "The sword of justice is swift and unyielding.",
+      "In the shadow of the castle, secrets dwell.",
+      "A knight's honor is his most cherished possession.",
+      "Beware the whispers of the forest; not all who listen return.",
+      "Gold buys loyalty, but respect must be earned.",
+      "In the heart of darkness, the flame of courage burns brightest.",
+      "The pen of the scribe weaves history as the sword cuts it.",
+      "Fortune favors the bold, but wisdom shields the wary.",
+      "In the halls of kings, the softest word may strike the deepest blow.",
+      "From the ashes of betrayal, a phoenix may rise.",
+      "The path of the warrior is carved by blood and fire.",
+      "Only the brave dare to challenge the gods of fate.",
+      "The shadows of the past haunt those who do not learn from them.",
+      "He who holds the crown must bear the weight of the world.",
+      "The fire of battle awakens the souls of those who fight for glory."
+    ];
+    function updateQuote() {
+      const quoteElement = document.getElementById('quote');
+      const randomIndex = Math.floor(Math.random() * medievalQuotes.length);
+      quoteElement.textContent = medievalQuotes[randomIndex];
+    }
+
+    updateQuote();
+  </script>
+</body>
+</html>
